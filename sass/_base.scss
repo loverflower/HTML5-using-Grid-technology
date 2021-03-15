@@ -1,0 +1,90 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+
+
+/////////queries responsive
+$bp-largest: 75em;  // 1200/16
+$bp-large: 62.5em;  //1000/16
+$bp-medium: 50em;   //800/16
+$bp-small-1: 43.75em;   //700/16
+
+
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;   ///   10px/16px
+
+    @media (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    color: $color-grey-dark-2;
+    font-family: $font-primary;
+    font-weight: 300;
+    line-height: 1.6;
+    
+
+}
+
+
+.container {
+display: grid;
+grid-template-rows: 80vh min-content 40vw repeat(3,min-content);
+grid-template-columns: [side-start] 8rem [side-end fullbleed-start] minmax(6rem,1fr) repeat(8, [center-start] minmax(min-content,12rem) [center-end]) minmax(6rem,1fr) [fullbleed-end];
+
+@media (max-width: $bp-large) {
+    grid-template-rows: 8rem 80vh min-content  40vw repeat(3,min-content);
+    grid-template-columns: [fullbleed-start] minmax(6rem,1fr) repeat(8, [center-start] minmax(min-content,12rem) [center-end]) minmax(6rem,1fr) [fullbleed-end];  
+}
+
+
+@media (max-width: $bp-medium) {
+    grid-template-rows: 8rem 80vh min-content min-content max-content repeat(3,min-content);
+    grid-template-columns: [fullbleed-start] minmax(6rem,1fr) repeat(8, [center-start] minmax(min-content,12rem) [center-end]) minmax(6rem,1fr) [fullbleed-end];  
+}
+
+
+@media (max-width: $bp-small-1) {
+    @media (max-width: $bp-medium) {
+        grid-template-rows: 8rem 80vh min-content min-content 60vw min-content repeat(3,min-content);
+        grid-template-columns: [fullbleed-start] minmax(6rem,1fr) repeat(8, [center-start] minmax(min-content,12rem) [center-end]) minmax(6rem,1fr) [fullbleed-end];  
+    }
+    
+    
+}
+
+@media (max-width: $bp-small-1) {
+    
+        grid-template-rows: 8rem 80vh min-content min-content 60vw min-content repeat(3,min-content);
+        grid-template-columns: [fullbleed-start] minmax(3rem,1fr) repeat(8, [center-start] minmax(min-content,12rem) [center-end]) minmax(3rem,1fr) [fullbleed-end];  
+    
+    
+    
+}
+
+
+}
